@@ -2,19 +2,21 @@
 
 @section('content')
 <div class="container my-3">
-    <h1>Welcome Page</h1>
-    <div class="row g-4">
-        <div class="col">
-            <div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, delectus ad esse illum omnis earum eligendi sint a minus quasi, inventore nulla autem. Maxime voluptatem eligendi veniam voluptates. Soluta, sunt!</p>
-            </div>
-
+    <h1>Movies</h1>
+    <div class="d-flex flex-wrap">
             @foreach($movies as $movie)
-                <div>
-                    <h2>{{$movie->title}}</h2>
+            <div class="p-2 col-6">
+                <div class="card w-100">
+                    <h5 class="card-header">{{$movie->title}}</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">{{$movie->original_title}}</h5>
+                        <p class="card-text">Nationality: {{$movie->nationality}}</p>
+                        <p class="card-text">Date: {{$movie->date}}</p>
+                        <p class="card-text">Vote: {{$movie->vote}}</p>
+                    </div>
                 </div>
+            </div>
             @endforeach
-        </div>
     </div>
 
 </div>

@@ -6,10 +6,12 @@
     <div class="d-flex flex-wrap">
             @foreach($movies as $movie)
             <div class="p-2 col-6">
-                <div class="card w-100">
+                <div class="card w-100 h-100">
                     <h5 class="card-header">{{$movie->title}}</h5>
                     <div class="card-body">
-                        <h5 class="card-title">{{$movie->original_title}}</h5>
+                        @if($movie->title != $movie->original_title)
+                            <h5 class="card-title">{{$movie->original_title}}</h5>
+                        @endif
                         <p class="card-text">Nationality: {{$movie->nationality}}</p>
                         <p class="card-text">Date: {{$movie->date}}</p>
                         <p class="card-text">Vote: {{$movie->vote}}</p>
